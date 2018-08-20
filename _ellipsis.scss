@@ -1,0 +1,48 @@
+// function start
+@mixin ellipsis($property) {
+
+    white-space: nowrap; 
+    width: $property; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    border: 1px solid #000000;
+	-webkit-transform: rotate(30deg);
+	-ms-transform: rotate(30deg);
+	transform: rotate(30deg);
+}
+// function end
+
+
+// inheritance example start
+// This CSS won't print because %equal-heights is never extended.
+%equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// This CSS will print because %message-shared is extended.
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: green;
+}
+
+.error {
+  @extend %message-shared;
+  border-color: red;
+}
+
+.warning {
+  @extend %message-shared;
+  border-color: yellow;
+}
+// inheritance example end
