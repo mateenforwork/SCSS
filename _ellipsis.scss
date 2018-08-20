@@ -2,7 +2,8 @@
 @mixin ellipsis($property) {
 
     white-space: nowrap; 
-    width: $property; 
+	//operator
+    width: $property + 5px; 
     overflow: hidden;
     text-overflow: ellipsis; 
     border: 1px solid #000000;
